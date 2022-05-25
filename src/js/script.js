@@ -41,11 +41,16 @@ function criarSecao (viagem) {
 }
 
 function percorrerProdutos (listaViagens) {
+    const total = document.querySelector('#precoTotal')
+    
+    let soma = 0
     for (let contagem = 0; contagem < listaViagens.length; contagem++){
         const viagem = listaViagens[contagem]
-
         criarLi(viagem)
+        let numero = viagem.preco
+        soma += numero
     }
+    total.innerText = soma
 }
 percorrerProdutos(listaDeProdutos)
 
@@ -59,7 +64,6 @@ function filtrarHortifruti (listaViagens) {
     })
     return hortifruti
 }
-
 const botaoHortifruti = document.querySelector('.estiloGeralBotoes--filtrarHortifruti')
 botaoHortifruti.addEventListener("click",function(){
 
@@ -68,6 +72,9 @@ botaoHortifruti.addEventListener("click",function(){
 
     const  retornoHortifruti = filtrarHortifruti(listaDeProdutos)
     percorrerProdutos(retornoHortifruti)
+
+    
+    
 
 })
 
@@ -80,7 +87,6 @@ function filtrarPanificadora (listaViagens) {
     })
     return panificadora
 }
-
 const botaoPanificadora = document.querySelector('.estiloGeralBotoes--filtrarPanificadora')
 botaoPanificadora.addEventListener('click', function(){
 
@@ -101,7 +107,6 @@ function filtrarLaticionios (listaViagens) {
     })
     return laticinios
 }
-
 const botaoLaticinios = document.querySelector('.estiloGeralBotoes--filtrarLaticínios')
 botaoLaticinios.addEventListener('click',function(){
 
@@ -126,3 +131,102 @@ botaoMostrarTodos.addEventListener('click', function(){
 })
 
 
+
+
+
+function filtrarBanana (listaViagens) {
+    const banana = listaViagens.filter(function(elem){
+        return elem.nome === 'Banana'
+    })
+    return banana
+}
+
+function filtrarMorango (listaViagens) {
+    const morango = listaViagens.filter(function(elem){
+        return elem.nome === 'Morango'
+    })
+    return morango
+}
+
+function filtrarMaca (listaViagens) {
+    const maca = listaViagens.filter(function(elem){
+        return elem.nome == "Maçã"
+    })
+    return maca
+}
+
+function filtrarPao (listaViagens) {
+    const pao = listaViagens.filter(function(elem){
+        return elem.nome == "Pão"
+    })
+   return pao
+}
+
+function filtrarLeite(listaViagens){
+    const leite = listaViagens.filter(function(elem){
+        return elem.nome == "Leite"
+    })
+    return leite
+}
+
+
+
+
+
+
+
+
+
+
+
+
+const input = document.querySelector('.campoBuscaPorNome')
+
+
+
+
+
+const botaoBuscar = document.querySelector('.estiloGeralBotoes--botaoBuscaPorNome')
+botaoBuscar.addEventListener('click', function(){
+
+        if(input.value == "Banana" || input.value == "banana"){
+            const div = document.querySelector('.containerListaProdutos > ul')
+            div.innerHTML = ''
+
+            const banana = filtrarBanana(listaDeProdutos)
+            percorrerProdutos(banana)
+        }
+        else if (input.value == "Morango" || input.value == "morango" ){
+            const div = document.querySelector('.containerListaProdutos > ul')
+            div.innerHTML = ''
+
+            const morango = filtrarMorango(listaDeProdutos)
+            percorrerProdutos(morango)
+        }
+        else if (input.value == "Maçã" || input.value == "maçã" || input.value == "maca"){
+            const div = document.querySelector('.containerListaProdutos > ul')
+            div.innerHTML = ''
+
+            const maca = filtrarMaca(listaDeProdutos)
+            percorrerProdutos(maca)
+
+        }
+        else if (input.value == "Pão" || input.value == "pão" || input.value == "pao"){
+            const div = document.querySelector('.containerListaProdutos > ul')
+            div.innerHTML = ''
+
+            const pao = filtrarPao(listaDeProdutos)
+            percorrerProdutos(pao)
+        }
+        else if (input.value == "Leite" || input.value == "leite"){
+            const div = document.querySelector('.containerListaProdutos > ul')
+            div.innerHTML = ''
+
+            const leite = filtrarLeite(listaDeProdutos)
+            percorrerProdutos(leite)
+        }
+
+        
+    }
+    
+)

@@ -5,7 +5,7 @@ body {
 /* CABEÇALHO */
 .filtersContainer {
     display: flex;
-    margin-left: 400px;
+    margin-left: 300px;
     align-items: center;
     padding: 30px;
 }
