@@ -40,7 +40,6 @@ function criarSecao (viagem) {
     return secao
 }
 
-
 function percorrerProdutos (listaViagens) {
     for (let contagem = 0; contagem < listaViagens.length; contagem++){
         const viagem = listaViagens[contagem]
@@ -49,3 +48,81 @@ function percorrerProdutos (listaViagens) {
     }
 }
 percorrerProdutos(listaDeProdutos)
+
+
+
+
+
+function filtrarHortifruti (listaViagens) {
+    const hortifruti = listaViagens.filter(function(elem){
+        return elem.secao === 'Hortifruti'
+    })
+    return hortifruti
+}
+
+const botaoHortifruti = document.querySelector('.estiloGeralBotoes--filtrarHortifruti')
+botaoHortifruti.addEventListener("click",function(){
+
+    const div = document.querySelector('.containerListaProdutos > ul')
+    div.innerHTML = ''
+
+    const  retornoHortifruti = filtrarHortifruti(listaDeProdutos)
+    percorrerProdutos(retornoHortifruti)
+
+})
+
+
+
+
+function filtrarPanificadora (listaViagens) {
+    const panificadora = listaViagens.filter(function(elem){
+        return elem.secao === 'Panificadora'
+    })
+    return panificadora
+}
+
+const botaoPanificadora = document.querySelector('.estiloGeralBotoes--filtrarPanificadora')
+botaoPanificadora.addEventListener('click', function(){
+
+    const div = document.querySelector('.containerListaProdutos > ul')
+    div.innerHTML = ''
+
+    const retornoPanificadora = filtrarPanificadora(listaDeProdutos)
+    percorrerProdutos(retornoPanificadora)
+
+})
+
+
+
+
+function filtrarLaticionios (listaViagens) {
+    const laticinios = listaViagens.filter(function(elem){
+        return elem.secao === 'Laticínio'
+    })
+    return laticinios
+}
+
+const botaoLaticinios = document.querySelector('.estiloGeralBotoes--filtrarLaticínios')
+botaoLaticinios.addEventListener('click',function(){
+
+    const div = document.querySelector('.containerListaProdutos > ul')
+    div.innerHTML = ''
+
+    const laticinios = filtrarLaticionios(listaDeProdutos)
+    percorrerProdutos(laticinios)
+
+})
+
+
+
+
+const botaoMostrarTodos = document.querySelector('.estiloGeralBotoes--mostrarTodos')
+botaoMostrarTodos.addEventListener('click', function(){
+
+    const div = document.querySelector('.containerListaProdutos > ul')
+    div.innerHTML = ''
+
+    percorrerProdutos(listaDeProdutos)
+})
+
+
