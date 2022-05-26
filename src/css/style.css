@@ -1,8 +1,23 @@
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:  sans-serif;
+    background-color: white;
 }
 
-/* CABEÇALHO */
+
+.topo{
+    height: 50px;
+    display: flex;
+    background: #f8f8f8;
+    box-shadow: 2px 10px 40px -15px rgb(0 0 0 / 25%);
+    align-items: center;
+}
+
+h3 {
+    margin: 0 auto;
+    font-weight: bolder;
+}
+
+
 .filtersContainer {
     display: flex;
     margin-left: 300px;
@@ -14,25 +29,32 @@ body {
     border: none;
     font-weight: bold;
     border-radius: 5px;
-    padding: 10px 20px;
+    padding: 15px 20px;
     cursor: pointer;
     display: block;
     font-size: 0.9rem;
 }
 
 .estiloGeralBotoes--mostrarTodos {
-    color: black;
-    background-color: #d3d3d3;
+    color: #12B886;
+    background-color: rgba(18, 184, 134, 0.05);
 }
 
 .estiloGeralBotoes {
     margin-left: 20px;
 }
 
-.estiloGeralBotoes--filtrarHortifruti,.estiloGeralBotoes--filtrarPanificadora,.estiloGeralBotoes--filtrarLaticínios {
-    background-color: tomato;
+.estiloGeralBotoes:hover{
     color: white;
+    background-color: #12B886;
+    transition: 0.5s;
 }
+
+.estiloGeralBotoes--filtrarHortifruti,.estiloGeralBotoes--filtrarPanificadora,.estiloGeralBotoes--filtrarLaticínios {
+    background-color: rgba(18, 184, 134, 0.05);
+    color: #12B886;
+}
+
 
 .containerBuscaPorNome {
     margin-left: 500px;
@@ -41,9 +63,10 @@ body {
 }
 
 .campoBuscaPorNome {
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px ;
     border: 1px solid black;
     padding: 0 10px;
+    background-color: #F1F3F5;
 }
 
 .estiloGeralBotoes--botaoBuscaPorNome {
@@ -103,10 +126,20 @@ main{}
 
 /* PREÇO TOTAL */
 .containerPrecoTotal{
-    text-align: center;
+    margin-left: 350px;
+    width: 63%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 10px 20px -15px rgb(0 0 0 / 25%);
+    
 }
 .containerPrecoTotal p{
     font-size: 1.4rem;
+    font-weight: 400;
+}
+.containerPrecoTotal p span{
     font-weight: 600;
 }
-.containerPrecoTotal p span{}

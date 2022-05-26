@@ -170,21 +170,7 @@ function filtrarLeite(listaViagens){
 }
 
 
-
-
-
-
-
-
-
-
-
-
 const input = document.querySelector('.campoBuscaPorNome')
-
-
-
-
 
 const botaoBuscar = document.querySelector('.estiloGeralBotoes--botaoBuscaPorNome')
 botaoBuscar.addEventListener('click', function(){

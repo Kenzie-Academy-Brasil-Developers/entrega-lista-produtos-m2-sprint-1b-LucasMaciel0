@@ -9,12 +9,13 @@
     <title>Lista de Produtos</title>
 </head>
 <body>
-
-    <!-- CABEÇALHO -->
+    <div class="topo">
+        <h3>Shop Now</h3>
+    </div>
     <header>
         <div id="filters" class="filtersContainer">
             
-            <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos">Mostrar Todos</button>
+            <button class="estiloGeralBotoes estiloGeralBotoes--mostrarTodos">Todos os Produtos</button>
             <button class="estiloGeralBotoes estiloGeralBotoes--filtrarHortifruti">Hortifruti</button>
             <button class="estiloGeralBotoes estiloGeralBotoes--filtrarPanificadora">Panificadora</button>
             <button class="estiloGeralBotoes estiloGeralBotoes--filtrarLaticínios">Laticínios</button>
@@ -29,19 +30,17 @@
     </header>
     
     <main>
+
+        <div class="containerPrecoTotal">
+            <p>Valor total dos produtos da sessão selecionada R$ <span id="precoTotal">00.00</span></p>
+        </div>
+
         <div class="containerListaProdutos" id="listProdutos">
             <ul>
-            <!-- Utilize esse item html como template para o a construçãda lista de produtos -->
-
-            <!-- Você pode remover esses comentários depois que fizer a construção pelo DOM -->
-
-            
             </ul>
         </div>
 
-        <div class="containerPrecoTotal">
-            <p>Preço total: R$<span id="precoTotal">00.00</span></p>
-        </div>
+        
     </main>
 
     <script src="src/js/dataProdutos.js"></script>
