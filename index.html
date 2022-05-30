@@ -23,7 +23,7 @@
             <div class="containerBuscaPorNome">
                 
                 <input type="text" placeholder="Pesquisar por" class="campoBuscaPorNome">
-                <button class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome">Buscar</button>
+                <button  class="estiloGeralBotoes estiloGeralBotoes--botaoBuscaPorNome"><i class="fa-solid fa-magnifying-glass"></i></button>
 
             </div>
         </div>
@@ -32,7 +32,13 @@
     <main>
 
         <div class="containerPrecoTotal">
-            <p>Valor total dos produtos da sessão selecionada R$ <span id="precoTotal">00.00</span></p>
+
+            <p><i class="fa-solid fa-circle-exclamation"></i> Valor total dos produtos da sessão selecionada  </p>
+
+            <div class="preco">
+                <span id="precoTotal"> 00.00</span>
+            </div>
+
         </div>
 
         <div class="containerListaProdutos" id="listProdutos">
@@ -42,7 +48,7 @@
 
         
     </main>
-
+    <script src="https://kit.fontawesome.com/50f4ee5b90.js" crossorigin="anonymous"></script>
     <script src="src/js/dataProdutos.js"></script>
     <script src="src/js/script.js"></script>
 </body>

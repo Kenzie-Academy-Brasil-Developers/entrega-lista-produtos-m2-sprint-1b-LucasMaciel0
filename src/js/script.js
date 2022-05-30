@@ -8,7 +8,7 @@ function criarLi (viagem) {
     const preco = criarPreco(viagem)
     const secao = criarSecao(viagem)
 
-    li.append(image,h3,preco,secao)
+    li.append(image,h3,secao,preco)
     ul.append(li)
 }
 
@@ -20,15 +20,15 @@ function criarImage (viagem) {
 }
 
 function criarH3 (viagem) {
-    const h3 = document.createElement('h3')
-    h3.innerText = viagem.nome;
+    const h5 = document.createElement('h5')
+    h5.innerText = viagem.nome;
 
-    return h3
+    return h5
 }
 
 function criarPreco (viagem) {
     const preco = document.createElement('p')
-    preco.innerText = viagem.preco;
+    preco.innerText = viagem.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 
     return preco
 }
@@ -50,7 +50,7 @@ function percorrerProdutos (listaViagens) {
         let numero = viagem.preco
         soma += numero
     }
-    total.innerText = soma
+    total.innerText = soma.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
 }
 percorrerProdutos(listaDeProdutos)
 

@@ -70,10 +70,11 @@ h3 {
 }
 
 .estiloGeralBotoes--botaoBuscaPorNome {
-    background-color: rgb(17, 17, 20);
+    background-color: #12B886;
     color: white;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px ;
 }
+
 
 /* CONTEÚDO */
 main{}
@@ -82,13 +83,16 @@ main{}
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    flex-wrap: wrap;
 }
 
 .containerListaProdutos ul {
+    margin-top: 20px;
     list-style: none;
-    text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
+    
 }
 
 .containerListaProdutos ul li {
@@ -98,48 +102,65 @@ main{}
     margin: 10px;
     border-radius: 5px;
     transition: ease-in-out .1s;
-    width: 20%;
+    
+    
 }
 
 .containerListaProdutos ul li:hover {
     box-shadow: 3px 3px 13px 1px rgb(146 146 146);
 }
 
-.containerListaProdutos ul li img {
+
+.containerListaProdutos ul li{
     width: 100%;
-    max-width: 80px;
+    max-width: 500px;
+}
+
+img{
+    width:230px ;
 }
 
 .containerListaProdutos ul li h3 {
+    
     font-size: 1.5rem;
 }
 
 .containerListaProdutos ul li p {
+    margin-top: 5px;
     font-size: 1.5rem;
 }
 .containerListaProdutos ul li span {
+    
     font-size: 0.8rem;
     font-weight: 500;
     margin-top: 10px;
     display: inline-block;
 }
 
+
+
 /* PREÇO TOTAL */
 .containerPrecoTotal{
-    margin-left: 350px;
-    width: 63%;
-    height: 50px;
+    max-width: 1200px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
+    margin-left: 400px;
+    justify-content: space-between;
     box-shadow: 2px 10px 20px -15px rgb(0 0 0 / 25%);
     
 }
 .containerPrecoTotal p{
     font-size: 1.4rem;
     font-weight: 400;
+    
 }
 .containerPrecoTotal p span{
     font-weight: 600;
+}
+
+.preco{
+    display: flex;
+    font-size: 24px;
+    color: white;
+    background-color: #212529;
+    padding: 10px;
 }
