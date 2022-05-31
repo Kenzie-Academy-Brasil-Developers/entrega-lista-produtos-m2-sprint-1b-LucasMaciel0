@@ -7,8 +7,10 @@ function criarLi (viagem) {
     const h3 = criarH3(viagem)
     const preco = criarPreco(viagem)
     const secao = criarSecao(viagem)
+    const botaoCarrinho = criariBotaoCarrinho()
 
-    li.append(image,h3,secao,preco)
+
+    li.append(image,h3,secao,preco,botaoCarrinho)
     ul.append(li)
 }
 
@@ -29,7 +31,7 @@ function criarH3 (viagem) {
 function criarPreco (viagem) {
     const preco = document.createElement('p')
     preco.innerText = viagem.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-
+    
     return preco
 }
 
@@ -40,8 +42,16 @@ function criarSecao (viagem) {
     return secao
 }
 
+function criariBotaoCarrinho(){
+    const botaoCarrinho = document.createElement('button')
+    botaoCarrinho.classList.add('botaocarrinho')
+    botaoCarrinho.innerText = 'Comprar'
+
+    return botaoCarrinho
+}
+
+
 function percorrerProdutos (listaViagens) {
-    const total = document.querySelector('#precoTotal')
     
     let soma = 0
     for (let contagem = 0; contagem < listaViagens.length; contagem++){
@@ -50,10 +60,9 @@ function percorrerProdutos (listaViagens) {
         let numero = viagem.preco
         soma += numero
     }
-    total.innerText = soma.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    
 }
 percorrerProdutos(listaDeProdutos)
-
 
 
 

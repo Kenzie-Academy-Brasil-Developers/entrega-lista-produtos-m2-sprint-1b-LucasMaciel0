@@ -20,16 +20,10 @@ h3 {
 
 .filtersContainer {
     display: flex;
-    justify-content: center;
-    margin-left: 300px;
+    justify-content:space-between;
     align-items: center;
     padding: 30px;
-}
-
-li {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    margin-right: 50px;
 }
 
 
@@ -39,7 +33,6 @@ li {
     border-radius: 5px;
     padding: 15px 20px;
     cursor: pointer;
-    display: block;
     font-size: 0.9rem;
 }
 
@@ -85,33 +78,56 @@ li {
 
 
 /* CONTEÚDO */
-main{}
+
+li {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+li > h5{
+    margin-top: 10px;
+}
+
+li span{
+    color:gray;
+    font-weight: 600;
+}
+.botaocarrinho{
+    margin-top: 10px;
+    color: black;
+    background-color: rgba(18, 184, 134, 0.05);
+    border-style: none;
+    color: #12B886;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.botaocarrinho:hover{
+    color: white;
+    background-color: #12B886;
+    transition: 0.5s;
+    cursor: pointer;
+}
 
 .containerListaProdutos {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+    display: flex;
+    justify-content:space-between;
+    margin-left: 100px;
 }
 
 .containerListaProdutos ul {
-    margin-top: 20px;
-    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .containerListaProdutos ul li {
     color: black;
     font-weight: bold;
     padding: 20px;
-    margin: 10px;
     border-radius: 5px;
-    transition: ease-in-out .1s;
-    
-    
+    transition: ease-in-out .2s;
 }
 
 .containerListaProdutos ul li:hover {
@@ -142,39 +158,33 @@ img{
     font-size: 0.8rem;
     font-weight: 500;
     margin-top: 10px;
-    display: inline-block;
+   
 }
 
 
 
-/* PREÇO TOTAL */
-.containerPrecoTotal{
-    margin: 0 auto;
-    width: 1400px;
-    height: 50px;
+/*carrinho*/
+main{
+    margin-top: 20px;
     display: flex;
-    align-items: center;
+    justify-content:space-between;
+}
+
+.carrinhoPrincipal{
+    width: 400px;
+    background-color:#F1F3F5;
+    margin-right: 50px;
+}
+
+.parteCimaCarrinho{
+    background-color: #12B886;
+    height: 40px;
+    color: #F1F3F5;
+    display: flex;
     justify-content: center;
-    justify-content: space-between;
-    box-shadow: 2px 10px 20px -15px rgb(0 0 0 / 25%);
-    
-    
-}
-.containerPrecoTotal p{
-    font-size: 1.4rem;
-    font-weight: 400;
-    
-    
-}
-.containerPrecoTotal p span{
-    font-weight: 600;
+    align-items: center;
 }
 
-.preco{
-    display: flex;
-    font-size: 24px;
-    color: white;
-    background-color: #212529;
-    padding: 10px;
-    border-radius: 10px;
+.corpoCarrinho{
+    background-color: yellow;
 }
