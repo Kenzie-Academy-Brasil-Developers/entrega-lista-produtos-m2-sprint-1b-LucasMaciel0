@@ -20,10 +20,18 @@ h3 {
 
 .filtersContainer {
     display: flex;
+    justify-content: center;
     margin-left: 300px;
     align-items: center;
     padding: 30px;
 }
+
+li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
 
 .estiloGeralBotoes{
     border: none;
@@ -141,16 +149,21 @@ img{
 
 /* PREÇO TOTAL */
 .containerPrecoTotal{
-    max-width: 1200px;
+    margin: 0 auto;
+    width: 1400px;
+    height: 50px;
     display: flex;
-    margin-left: 400px;
+    align-items: center;
+    justify-content: center;
     justify-content: space-between;
     box-shadow: 2px 10px 20px -15px rgb(0 0 0 / 25%);
+    
     
 }
 .containerPrecoTotal p{
     font-size: 1.4rem;
     font-weight: 400;
+    
     
 }
 .containerPrecoTotal p span{
@@ -163,4 +176,5 @@ img{
     color: white;
     background-color: #212529;
     padding: 10px;
+    border-radius: 10px;
 }

@@ -103,7 +103,7 @@ botaoPanificadora.addEventListener('click', function(){
 
 function filtrarLaticionios (listaViagens) {
     const laticinios = listaViagens.filter(function(elem){
-        return elem.secao === 'Laticínio'
+        return elem.secao === 'Laticinio'
     })
     return laticinios
 }
@@ -113,8 +113,8 @@ botaoLaticinios.addEventListener('click',function(){
     const div = document.querySelector('.containerListaProdutos > ul')
     div.innerHTML = ''
 
-    const laticinios = filtrarLaticionios(listaDeProdutos)
-    percorrerProdutos(laticinios)
+    const retornolaticinios = filtrarLaticionios(listaDeProdutos)
+    percorrerProdutos(retornolaticinios)
 
 })
 
