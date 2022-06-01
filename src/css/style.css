@@ -2,8 +2,12 @@ body {
     font-family:  sans-serif;
     background-color: white;
 }
-
-
+main{
+    margin-top: 20px;
+    display: flex;    
+    margin-left: 40px;
+}
+/*HEADER*/
 .topo{
     height: 50px;
     display: flex;
@@ -11,6 +15,9 @@ body {
     box-shadow: 2px 10px 40px -15px rgb(0 0 0 / 25%);
     align-items: center;
 }
+/****************/
+
+
 
 h3 {
     margin: 0 auto;
@@ -26,8 +33,8 @@ h3 {
     margin-right: 50px;
 }
 
-
-.estiloGeralBotoes{
+.estiloGeralBotoes{ /* FALTA ESTILIZAR BOTOES PARTE DE CIMA*/
+    margin-left: 30px;
     border: none;
     font-weight: bold;
     border-radius: 5px;
@@ -36,64 +43,64 @@ h3 {
     font-size: 0.9rem;
 }
 
-.estiloGeralBotoes--mostrarTodos {
-    color: #12B886;
-    background-color: rgba(18, 184, 134, 0.05);
-}
-
-.estiloGeralBotoes {
-    margin-left: 20px;
-}
-
 .estiloGeralBotoes:hover{
     color: white;
     background-color: #12B886;
     transition: 0.5s;
 }
 
-.estiloGeralBotoes--filtrarHortifruti,.estiloGeralBotoes--filtrarPanificadora,.estiloGeralBotoes--filtrarLaticínios {
-    background-color: rgba(18, 184, 134, 0.05);
-    color: #12B886;
+.campoBuscaPorNome{
+    padding: 10px;
+    border-radius: 5px;
 }
 
 
-.containerBuscaPorNome {
-    margin-left: 500px;
+
+ul {/* MINHA LISTA DOS CARDS*/
+    
     display: flex;
-    justify-content: space-between;
+    width: 1800px;
+    flex-wrap: wrap;
+    
 }
-
-.campoBuscaPorNome {
-    border-radius: 5px ;
-    border: 1px solid black;
-    padding: 0 10px;
-    background-color: #F1F3F5;
-}
-
-.estiloGeralBotoes--botaoBuscaPorNome {
-    background-color: #12B886;
-    color: white;
-    border-radius: 5px ;
-}
-
-
-/* CONTEÚDO */
-
-li {
+.containerListaProdutos ul li {
     display: flex;
     flex-direction: column;
-    margin: 5px;
+    color: black;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 5px;
+    transition: ease-in-out .2s;
 }
 
-li > h5{
-    margin-top: 10px;
+li{
+    margin: 10px;
+    height: 400px;
+    width: 400px;
+}
+
+
+li h3{
+    margin: 0;
+    margin-top: 8px;
+}
+
+li p{
+    margin-top: 8px;
 }
 
 li span{
-    color:gray;
-    font-weight: 600;
+    margin-top: 8px;
 }
-.botaocarrinho{
+.containerListaProdutos ul li:hover {
+    box-shadow: 3px 3px 13px 1px rgb(146 146 146);
+    cursor: pointer;
+}
+
+
+
+
+.botaocarrinho{/*MEU BOTAO CARRINHO ESTILIZADO*/
     margin-top: 10px;
     color: black;
     background-color: rgba(18, 184, 134, 0.05);
@@ -110,81 +117,23 @@ li span{
     cursor: pointer;
 }
 
-.containerListaProdutos {
-    display: flex;
-    justify-content:space-between;
-    margin-left: 100px;
-}
-
-.containerListaProdutos ul {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.containerListaProdutos ul li {
-    color: black;
-    font-weight: bold;
-    padding: 20px;
-    border-radius: 5px;
-    transition: ease-in-out .2s;
-}
-
-.containerListaProdutos ul li:hover {
-    box-shadow: 3px 3px 13px 1px rgb(146 146 146);
-}
-
-
-.containerListaProdutos ul li{
-    width: 100%;
-    max-width: 500px;
-}
-
-img{
-    width:230px ;
-}
-
-.containerListaProdutos ul li h3 {
-    
-    font-size: 1.5rem;
-}
-
-.containerListaProdutos ul li p {
-    margin-top: 5px;
-    font-size: 1.5rem;
-}
-.containerListaProdutos ul li span {
-    
-    font-size: 0.8rem;
-    font-weight: 500;
-    margin-top: 10px;
-   
-}
-
-
-
-/*carrinho*/
-main{
-    margin-top: 20px;
-    display: flex;
-    justify-content:space-between;
-}
+/* CARRINHO*/
 
 .carrinhoPrincipal{
+    position: absolute;
+    right: 50px;
     width: 400px;
-    background-color:#F1F3F5;
-    margin-right: 50px;
+    height: 350px;
+    background-color: rgba(18, 184, 134, 0.05);
+    border-radius: 10px;
+    border: solid 1px;
+    overflow:auto;
 }
-
 .parteCimaCarrinho{
+    border: solid 1px;
+    border-radius: 10px;
     background-color: #12B886;
-    height: 40px;
-    color: #F1F3F5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.corpoCarrinho{
-    background-color: yellow;
+    padding: 15px;
+    color: white;
+    text-align: center;
 }

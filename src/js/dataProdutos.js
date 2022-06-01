@@ -28,7 +28,8 @@ const listaDeProdutos = [
             'Fibras',
             'Vitamina C',
             'Cálcio',
-            'Ferro'
+            'Ferro ',
+            'Proteínas'
         ] 
     },
     {
@@ -60,7 +61,8 @@ const listaDeProdutos = [
             'Cálcio',
             'Sódio',
             'Fibra Alimentar',
-            'Proteínas'
+            'Proteínas',
+            'Ferro ',
         ] 
     },
     {
@@ -72,6 +74,21 @@ const listaDeProdutos = [
         img: './src/img/unsplash_rbJ9BY8bRRY.png',
         promocao: false,
         precoPromocao: '1.00',
+        componentes: [
+            'Carboidratos',
+            'Proteínas',
+            'Gorduras totais'
+        ] 
+    },
+    {
+        id: 6,
+        nome: 'Bolo',
+        preco: 10,
+        secao: 'Panificadora',
+        categoria: 'Bolos',
+        img: './src/img/unsplash_vdx5hPQhXFk.png',
+        promocao: true,
+        precoPromocao: '2.50',
         componentes: [
             'Carboidratos',
             'Proteínas',
