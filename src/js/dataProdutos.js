@@ -62,7 +62,7 @@ const listaDeProdutos = [
             'Sódio',
             'Fibra Alimentar',
             'Proteínas',
-            'Ferro ',
+            
         ] 
     },
     {

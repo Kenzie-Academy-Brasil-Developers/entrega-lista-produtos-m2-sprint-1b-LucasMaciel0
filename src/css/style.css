@@ -2,11 +2,7 @@ body {
     font-family:  sans-serif;
     background-color: white;
 }
-main{
-    margin-top: 20px;
-    display: flex;    
-    margin-left: 40px;
-}
+
 /*HEADER*/
 .topo{
     height: 50px;
@@ -15,30 +11,43 @@ main{
     box-shadow: 2px 10px 40px -15px rgb(0 0 0 / 25%);
     align-items: center;
 }
-/****************/
-
-
 
 h3 {
     margin: 0 auto;
     font-weight: bolder;
 }
 
+/****************/
 
-.filtersContainer {
+/*BOTOES CATEGORIAS*/
+.botoesSuperior{
     display: flex;
-    justify-content:space-between;
-    align-items: center;
-    padding: 30px;
-    margin-right: 50px;
+    flex-direction: row;
+    overflow: auto;
+    margin-top: 2em;
 }
 
-.estiloGeralBotoes{ /* FALTA ESTILIZAR BOTOES PARTE DE CIMA*/
-    margin-left: 30px;
+.containerBuscaPorNome{
+    margin-top: 2em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.campoBuscaPorNome{
+    padding: 10px;
+    border-radius: 5px;
+    width: 5em;
+}
+
+
+.estiloGeralBotoes{ 
+    margin: 5px;
     border: none;
     font-weight: bold;
     border-radius: 5px;
-    padding: 15px 20px;
+    padding: 8px 12px;
     cursor: pointer;
     font-size: 0.9rem;
 }
@@ -49,58 +58,53 @@ h3 {
     transition: 0.5s;
 }
 
-.campoBuscaPorNome{
-    padding: 10px;
-    border-radius: 5px;
-}
+/***********************/
 
 
 
 ul {/* MINHA LISTA DOS CARDS*/
-    
+    height: 250px;
+    margin-top: 1em;
     display: flex;
-    width: 1800px;
-    flex-wrap: wrap;
-    
+    flex-direction: row;
+    overflow: auto;
 }
 .containerListaProdutos ul li {
     display: flex;
     flex-direction: column;
     color: black;
     font-weight: bold;
-    padding: 20px;
+    padding: 5px;
     border-radius: 5px;
     transition: ease-in-out .2s;
 }
 
 li{
-    margin: 10px;
-    height: 400px;
-    width: 400px;
+    margin: 5px;
+    width: 85%;
+    height: 290px;
 }
 
 
 li h3{
     margin: 0;
-    margin-top: 8px;
+    margin-top: 4px;
 }
 
 li p{
-    margin-top: 8px;
+    margin-top: 4px;
+    font-size: 0.7em;
 }
 
 li span{
-    margin-top: 8px;
+    margin-top: 4px;
 }
 .containerListaProdutos ul li:hover {
     box-shadow: 3px 3px 13px 1px rgb(146 146 146);
     cursor: pointer;
 }
 
-
-
-
-.botaocarrinho{/*MEU BOTAO CARRINHO ESTILIZADO*/
+.botaocarrinho{
     margin-top: 10px;
     color: black;
     background-color: rgba(18, 184, 134, 0.05);
@@ -116,14 +120,18 @@ li span{
     transition: 0.5s;
     cursor: pointer;
 }
+/************************************/
+
+
 
 /* CARRINHO*/
 
 .carrinhoPrincipal{
-    position: absolute;
-    right: 50px;
-    width: 400px;
-    height: 350px;
+    
+    height: 200px;
+    margin: auto;
+    margin-top: 1em;
+    
     background-color: rgba(18, 184, 134, 0.05);
     border-radius: 10px;
     border: solid 1px;
