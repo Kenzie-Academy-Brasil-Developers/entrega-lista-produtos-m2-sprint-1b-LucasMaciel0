@@ -38,7 +38,7 @@ h3 {
 .campoBuscaPorNome{
     padding: 10px;
     border-radius: 5px;
-    width: 5em;
+    width: 7em;
 }
 
 
@@ -63,7 +63,7 @@ h3 {
 
 
 ul {/* MINHA LISTA DOS CARDS*/
-    height: 250px;
+    height: 320px;
     margin-top: 1em;
     display: flex;
     flex-direction: row;
@@ -81,7 +81,7 @@ ul {/* MINHA LISTA DOS CARDS*/
 
 li{
     margin: 5px;
-    width: 85%;
+    width: 70%;
     height: 290px;
 }
 
@@ -131,12 +131,13 @@ li span{
     height: 200px;
     margin: auto;
     margin-top: 1em;
-    
     background-color: rgba(18, 184, 134, 0.05);
     border-radius: 10px;
     border: solid 1px;
     overflow:auto;
+    width: 320px;
 }
+
 .parteCimaCarrinho{
     border: solid 1px;
     border-radius: 10px;
@@ -145,3 +146,101 @@ li span{
     color: white;
     text-align: center;
 }
+
+.corpoCarrinho > ul{
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
+}
+
+.corpoCarrinho > ul img{
+    width: 80%;
+    height: 100px;
+}
+
+.corpoCarrinho > ul li {
+    display: flex;
+    height: 100px;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+
+
+
+
+/*BREAKPOINTS*/
+
+@media (min-width: 768px){
+    .botoesSuperior{
+        display: flex;
+        margin-top: 2em;
+    }
+
+    .filtersContainer{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .campoBuscaPorNome{
+        padding: 10px;
+        border-radius: 5px;
+        width: 8em;
+    }
+
+    ul {/* MINHA LISTA DOS CARDS*/
+        padding: 20px;
+        margin-top: 1em;
+        display: flex;
+        width: 90%;
+        height: 100%;
+        margin-left: 90px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    li{
+        width: 18em;
+        display: flex;
+        flex-direction: row;
+        
+        height: auto;
+        margin: 10px;
+        padding: 20px;
+        justify-content: center;
+    }
+    li > img{
+        width: 100%;
+    }
+
+    .containerListaProdutos{
+      
+        display: flex;
+        justify-content: center;
+        
+
+    }
+    main{
+        display: flex;
+    }
+    /*Carrinho*/
+    .carrinhoPrincipal{
+        margin-right: 40px;
+        margin-top: 2em;
+        width: 300px;
+        height: 250px;
+        background-color: rgba(18, 184, 134, 0.05);
+        border-radius: 10px;
+        border: solid 1px;
+        
+    }
+
+    .ulCarrinho {
+        padding: 20px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+}
+

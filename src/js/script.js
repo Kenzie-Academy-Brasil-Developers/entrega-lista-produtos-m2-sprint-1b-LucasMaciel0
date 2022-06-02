@@ -14,6 +14,7 @@ function montarListaProdutos(listaProdutos) {
         const nutrientes = document.createElement('p')
         
         
+        li.id = produto.id
         img.src = produto.img;
         img.alt = produto.nome;
         h3.innerText = produto.nome;
@@ -98,7 +99,66 @@ function filtrarPesquisa(){
 
 
 
-const botarCarrinho = document.querySelectorAll('.botaocarrinho')
-botarCarrinho.addEventListener('click', )
+/*const botarCarrinho = document.querySelectorAll('.botaocarrinho')
+botarCarrinho.addEventListener('click', )*/
 
 const ulCarrinho = document.querySelector('.ulCarrinho')
+
+
+
+function identificarItem (event) {
+    const alvo = event.target
+
+    if(alvo.tagName === "BUTTON"){
+        criarLi(alvo)
+    }
+}
+
+ul.addEventListener('click',identificarItem)
+
+function criarLi (botao) {
+
+    listaDeProdutos.forEach((produto)=>{
+
+        if(produto.id === Number(botao.parentElement.id)){
+            
+            const li = document.createElement('li')
+            const img = document.createElement('img')
+            const div = document.createElement('div')
+            const h3 = document.createElement('h3')
+            const p = document.createElement('p')
+            const span = document.createElement('span')
+            const botaoRemover = document.createElement('button')
+
+            li.id = produto.id
+            img.src = produto.img
+            h3.innerText = produto.nome
+            p.innerText = produto.secao
+            span.innerText = produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+            botaoRemover.innerText = 'X'
+
+            div.append(h3,p,span)
+            li.append(img,div,botaoRemover)
+
+            ulCarrinho.appendChild(li)
+        }
+    })
+}
+
+
+
+
+
+
+function removerItem (button) {
+    button.parentElement.remove()
+}
+
+function identificarBotaoRemover (event) {
+    const alvo = event.target
+
+    if(alvo.tagName === "BUTTON"){
+        removerItem(alvo)
+    }
+}
+ulCarrinho.addEventListener('click',identificarBotaoRemover)
