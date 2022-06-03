@@ -80,8 +80,6 @@ botaoMostrarLaticinios.addEventListener('click', filtrarPorLaticinios )
 
 
 
-
-
 const inputBusca = document.querySelector('.campoBuscaPorNome')
 
 const botaoPesquisar = document.querySelector('.estiloGeralBotoes--botaoBuscaPorNome')
@@ -96,15 +94,7 @@ function filtrarPesquisa(){
 
 
 // COLOCANDO NO CARRINHO 
-
-
-
-/*const botarCarrinho = document.querySelectorAll('.botaocarrinho')
-botarCarrinho.addEventListener('click', )*/
-
 const ulCarrinho = document.querySelector('.ulCarrinho')
-
-
 
 function identificarItem (event) {
     const alvo = event.target
@@ -116,10 +106,12 @@ function identificarItem (event) {
 
 ul.addEventListener('click',identificarItem)
 
+let quantidade1 = 1
+let soma = 0
+
 function criarLi (botao) {
 
     listaDeProdutos.forEach((produto)=>{
-
         if(produto.id === Number(botao.parentElement.id)){
             
             const li = document.createElement('li')
@@ -129,6 +121,7 @@ function criarLi (botao) {
             const p = document.createElement('p')
             const span = document.createElement('span')
             const botaoRemover = document.createElement('button')
+           
 
             li.id = produto.id
             img.src = produto.img
@@ -136,11 +129,15 @@ function criarLi (botao) {
             p.innerText = produto.secao
             span.innerText = produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
             botaoRemover.innerText = 'X'
+            div.classList.add('divCarrinho')
+
+        
 
             div.append(h3,p,span)
             li.append(img,div,botaoRemover)
-
-            ulCarrinho.appendChild(li)
+            quantidade1++
+            ulCarrinho.append(li)
+            
         }
     })
 }
@@ -148,8 +145,7 @@ function criarLi (botao) {
 
 
 
-
-
+//REMOVENDO DO CARRINHO
 function removerItem (button) {
     button.parentElement.remove()
 }

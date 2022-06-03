@@ -24,11 +24,11 @@ h3 {
     display: flex;
     flex-direction: row;
     overflow: auto;
-    margin-top: 2em;
+    margin-top: 1em;
 }
 
 .containerBuscaPorNome{
-    margin-top: 2em;
+    margin-top: 1em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -38,10 +38,13 @@ h3 {
 .campoBuscaPorNome{
     padding: 10px;
     border-radius: 5px;
-    width: 7em;
+    width: 14em;
 }
 
-
+.estiloGeralBotoes--mostrarTodos{
+    background-color: #12B886;
+    color: #f8f8f8;
+}
 .estiloGeralBotoes{ 
     margin: 5px;
     border: none;
@@ -57,17 +60,30 @@ h3 {
     background-color: #12B886;
     transition: 0.5s;
 }
-
+.estiloGeralBotoes--botaoBuscaPorNome{
+    background-color: #12B886;
+    color: #f8f8f8;
+    width: 4em;
+    height: 30px;
+}
 /***********************/
 
 
 
 ul {/* MINHA LISTA DOS CARDS*/
-    height: 320px;
+    height: 290px;
     margin-top: 1em;
     display: flex;
     flex-direction: row;
     overflow: auto;
+}
+
+#listProdutos  li{
+    height: 263px;
+}
+
+.listaNutrientes{
+    
 }
 .containerListaProdutos ul li {
     display: flex;
@@ -127,17 +143,18 @@ li span{
 /* CARRINHO*/
 
 .carrinhoPrincipal{
-    
-    height: 200px;
-    margin: auto;
-    margin-top: 1em;
     background-color: rgba(18, 184, 134, 0.05);
     border-radius: 10px;
     border: solid 1px;
     overflow:auto;
-    width: 320px;
+    width: 90%;
+    margin: auto;
+    margin-top: 1em;
 }
-
+.parteCimaCarrinho p{
+    display: flex;
+    justify-content: space-evenly;
+}
 .parteCimaCarrinho{
     border: solid 1px;
     border-radius: 10px;
@@ -166,10 +183,35 @@ li span{
     align-items: center;
     
 }
+.ulCarrinho {
+    height: 150px;
+}
 
+.ulCarrinho li{
+    
+    margin-left: 20px;
+}
+.ulCarrinho li img{
+    width: 110px;
+    height: 100px;
+    border-radius: 5px;
+    
+}
 
+.ulCarrinho li button{
+    width: 50px;
+    margin-left: 20px;
+}
 
+.divCarrinho{
+    margin-left: 15px;
+}
 
+.divQuantidadeTotal{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 /*BREAKPOINTS*/
 
@@ -177,6 +219,12 @@ li span{
     .botoesSuperior{
         display: flex;
         margin-top: 2em;
+    }
+
+    .campoBuscaPorNome{
+        padding: 10px;
+        border-radius: 5px;
+        width: 14em;
     }
 
     .filtersContainer{
@@ -188,6 +236,7 @@ li span{
         padding: 10px;
         border-radius: 5px;
         width: 8em;
+        height: 15px;
     }
 
     ul {/* MINHA LISTA DOS CARDS*/
@@ -198,18 +247,17 @@ li span{
         height: 100%;
         margin-left: 90px;
         flex-wrap: wrap;
-        justify-content: center;
+        margin-top: 20px;
+        
     }
 
     li{
-        width: 18em;
-        display: flex;
-        flex-direction: row;
         
-        height: auto;
+        
+        width: 210px;
         margin: 10px;
         padding: 20px;
-        justify-content: center;
+        
     }
     li > img{
         width: 100%;
@@ -225,22 +273,50 @@ li span{
     main{
         display: flex;
     }
+
     /*Carrinho*/
     .carrinhoPrincipal{
-        margin-right: 40px;
+        position: absolute;
+        right: 250px;
         margin-top: 2em;
         width: 300px;
-        height: 250px;
+        height: 400px;
         background-color: rgba(18, 184, 134, 0.05);
         border-radius: 10px;
-        border: solid 1px;
+        border-style: none;
+        overflow: hidden;
         
     }
-
-    .ulCarrinho {
-        padding: 20px;
+    .parteCimaCarrinho{
+        
+        border-radius: 10px;
+        background-color: #12B886;
+        padding: 15px;
+        color: white;
+        text-align: center;
+    }
+    .corpoCarrinho{
+        height: 400px;
+        width: auto;
+        overflow: auto;
+    }
+    .corpoCarrinho ul{
+        display: flex;
+        padding: 0;
         margin: 0 auto;
-        overflow: hidden;
+        flex-wrap:nowrap;
+        height: auto;
+        overflow: auto;
+    }
+    .corpoCarrinho li{
+        margin: 0 auto;
+        padding: 0;
+        margin-top: 10px;
+        
+    }
+    .ulCarrinho li button{
+        width: 50px;
+        margin-left: 10px;
     }
 }
 
