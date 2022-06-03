@@ -143,9 +143,8 @@ li span{
 /* CARRINHO*/
 
 .carrinhoPrincipal{
-    background-color: rgba(18, 184, 134, 0.05);
+    
     border-radius: 10px;
-    border: solid 1px;
     overflow:auto;
     width: 90%;
     margin: auto;
@@ -275,20 +274,21 @@ li span{
     }
 
     /*Carrinho*/
+   
+
     .carrinhoPrincipal{
         position: absolute;
         right: 250px;
         margin-top: 2em;
         width: 300px;
-        height: 400px;
-        background-color: rgba(18, 184, 134, 0.05);
+        height: 40%;
         border-radius: 10px;
         border-style: none;
-        overflow: hidden;
+        overflow:visible;
         
     }
     .parteCimaCarrinho{
-        
+
         border-radius: 10px;
         background-color: #12B886;
         padding: 15px;
@@ -296,17 +296,17 @@ li span{
         text-align: center;
     }
     .corpoCarrinho{
-        height: 400px;
+        height: 100%;
         width: auto;
-        overflow: auto;
+        
     }
     .corpoCarrinho ul{
         display: flex;
         padding: 0;
         margin: 0 auto;
         flex-wrap:nowrap;
-        height: auto;
-        overflow: auto;
+        height: 100%;
+        
     }
     .corpoCarrinho li{
         margin: 0 auto;
