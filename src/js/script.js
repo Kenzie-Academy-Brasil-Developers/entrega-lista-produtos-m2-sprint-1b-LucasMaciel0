@@ -1,3 +1,4 @@
+let arrayProdutos = [] //
 const ul = document.querySelector('.containerListaProdutos ul');
 
 function montarListaProdutos(listaProdutos) {
@@ -13,7 +14,11 @@ function montarListaProdutos(listaProdutos) {
         const botaoCarrinho = document.createElement('button')
         const nutrientes = document.createElement('p')
         
-        
+        botaoCarrinho.addEventListener('click',()=>{
+            arrayProdutos.push(produto)
+            criarCarrinho(arrayProdutos)
+        })
+
         li.id = produto.id
         img.src = produto.img;
         img.alt = produto.nome;
@@ -96,24 +101,13 @@ function filtrarPesquisa(){
 // COLOCANDO NO CARRINHO 
 const ulCarrinho = document.querySelector('.ulCarrinho')
 
-function identificarItem (event) {
-    const alvo = event.target
 
-    if(alvo.tagName === "BUTTON"){
-        criarLi(alvo)
-    }
-}
-
-ul.addEventListener('click',identificarItem)
-
-let quantidade1 = 1
 let soma = 0
+function criarCarrinho (arrayProdutos) {
+    ulCarrinho.innerHTML = ''
+    arrayProdutos.forEach((produto)=>{
 
-function criarLi (botao) {
-
-    listaDeProdutos.forEach((produto)=>{
-        if(produto.id === Number(botao.parentElement.id)){
-            
+            const carrinhoPrincipal = document.querySelector('.carrinhoPrincipal')
             const li = document.createElement('li')
             const img = document.createElement('img')
             const div = document.createElement('div')
@@ -121,7 +115,12 @@ function criarLi (botao) {
             const p = document.createElement('p')
             const span = document.createElement('span')
             const botaoRemover = document.createElement('button')
-           
+
+            const quantidadeTotal = document.querySelector('.quantidadeTotal')            
+            const pQuantidadeCarrinho = document.querySelector('.pQuantidadeCarrinho')
+            const spanQuantidadeCarrinho = document.querySelector('.spanQuantidadeCarrinho')
+            const pTotalCarrinho = document.querySelector('.totalPCarrinho')
+            const totalSpanCarrinho = document.querySelector('.totalSpanCarrinho')
 
             li.id = produto.id
             img.src = produto.img
@@ -129,32 +128,47 @@ function criarLi (botao) {
             p.innerText = produto.secao
             span.innerText = produto.preco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
             botaoRemover.innerText = 'X'
+            botaoRemover.addEventListener('click',()=>{
+                removeProduto(produto.id)
+            })
+
             div.classList.add('divCarrinho')
 
-        
+            pQuantidadeCarrinho.innerText = 'Quantidade'
+            pTotalCarrinho.innerHTML = 'Total'
+            spanQuantidadeCarrinho.innerText = arrayProdutos.length
+            
+           
+            
+            quantidadeTotal.append(pQuantidadeCarrinho,pTotalCarrinho,spanQuantidadeCarrinho,totalSpanCarrinho)
+            carrinhoPrincipal.appendChild(quantidadeTotal)
 
             div.append(h3,p,span)
             li.append(img,div,botaoRemover)
-            quantidade1++
             ulCarrinho.append(li)
             
         }
-    })
+    )
 }
+
+
 
 
 
 
 //REMOVENDO DO CARRINHO
-function removerItem (button) {
-    button.parentElement.remove()
+
+
+function removeProduto (id){
+    let array = []
+    let x = 0
+     arrayProdutos.filter((produto)=>{
+        if(produto.id !== id ){
+            
+            array.push(produto)
+        }
+    })
+    arrayProdutos = array
+    criarCarrinho(arrayProdutos)
 }
 
-function identificarBotaoRemover (event) {
-    const alvo = event.target
-
-    if(alvo.tagName === "BUTTON"){
-        removerItem(alvo)
-    }
-}
-ulCarrinho.addEventListener('click',identificarBotaoRemover)
